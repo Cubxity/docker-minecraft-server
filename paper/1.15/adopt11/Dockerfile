@@ -4,9 +4,9 @@ LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.version="1.15-paper-adopt11"
 
-RUN addgroup -S -g 1000 minecraft \
-  && adduser -Ss /bin/false -u 1000 --home /home/minecraft minecraft \
-  && mkdir -m 644 /data \
+RUN addgroup -g 1000 minecraft \
+  && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
+  && mkdir -m 775 /data \
   && chown minecraft:minecraft /data
 
 ENV PAPER_VERSION 1.15

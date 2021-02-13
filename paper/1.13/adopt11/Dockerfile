@@ -1,5 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
+LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.version="1.13-paper-adopt11"

@@ -5,6 +5,10 @@
   ./update.sh
 )
 (
+  cd ./yatopia || exit
+  ./update.sh
+)
+(
   cd ./paper || exit
   ./update.sh
 )

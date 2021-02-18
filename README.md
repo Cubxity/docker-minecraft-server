@@ -18,4 +18,6 @@ This image makes use of Aikar's flags by default. The root volume is mounted at 
 ## Variants
 Images are based on adoptopenjdk's alpine images.
 
-**Paper**: `{version}-paper-{runtime}`, example: `1.16.5-paper-adopt15`.
+- **Paper**: `{version}-paper-{runtime}`, example: `1.16.5-paper-adopt15`.
+- **Tuinity**: `tuinity-{runtime}`, example: `tuinity-adopt15`.
+- **Yatopia**: `{version}-yatopia-{runtime}`, example: `1.16.5-yatopia-adopt15`.

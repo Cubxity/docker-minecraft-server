@@ -5,7 +5,7 @@ runtimes[adopt11]="adoptopenjdk/openjdk11:alpine-jre"
 runtimes[adopt15]="adoptopenjdk/openjdk15:alpine-jre"
 
 manifest=$(curl -s https://ci.codemc.io/job/Spottedleaf/job/Tuinity/lastSuccessfulBuild/api/json)
-build=$(echo "$manifest" | jq -r ".number")v
+build=$(echo "$manifest" | jq -r ".number")
 
 for runtimeName in "${!runtimes[@]}"; do
   runtime="${runtimes[$runtimeName]}"

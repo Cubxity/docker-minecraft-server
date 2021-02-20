@@ -33,4 +33,4 @@ fi
 
 # Start the server
 # shellcheck disable=SC2086 disable=SC2068
-java $JVM_XX_OPTS $JVM_OPTS $D_OPTS -jar /data/server.jar $@
+java $JVM_XX_OPTS $JVM_OPTS $D_OPTS -jar /server.jar $@

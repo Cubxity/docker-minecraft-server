@@ -15,7 +15,7 @@ ENV PAPER_BUILD 253
 ENV PAPER_SHA256 940303ee5f5bcc08377e388ea1c1daa109c1ac8c4d189dc67de1106853f2fc23
 
 RUN apk add --no-cache -U curl \
-  && curl -o /data/server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \
+  && curl -o /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \
   && echo "$PAPER_SHA256  /data/server.jar" | sha256sum -c -
 
 VOLUME ["/data"]

@@ -13,7 +13,7 @@ RUN addgroup -g 1000 minecraft \
 ENV TUINITY_BUILD 190
 
 RUN apk add --no-cache -U curl \
-  && curl -o /data/server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
+  && curl -o /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
 
 VOLUME ["/data"]
 WORKDIR /data

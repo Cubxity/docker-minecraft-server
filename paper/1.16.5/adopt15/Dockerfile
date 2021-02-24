@@ -11,8 +11,8 @@ RUN addgroup -g 1000 minecraft \
   && chown minecraft:minecraft /data
 
 ENV PAPER_VERSION 1.16.5
-ENV PAPER_BUILD 492
-ENV PAPER_SHA256 a3b853386c18eed23f91f7e708602d4d6ceed5040447da86408f906f31fa696a
+ENV PAPER_BUILD 495
+ENV PAPER_SHA256 6bef41bd3a6fe6dc53958c34f1143bdc7457ed1f904b4f1a44674ca60f49c063
 
 RUN apk add --no-cache -U curl \
   && curl -o /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \

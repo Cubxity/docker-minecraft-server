@@ -33,14 +33,4 @@ fi
 
 # Start the server
 # shellcheck disable=SC2086 disable=SC2068
-java $JVM_XX_OPTS $JVM_OPTS $D_OPTS -jar /server.jar $@ &
-
-# Gracefully stop the server
-cleanup() {
-  kill $!
-  wait $!
-}
-trap cleanup TERM
-
-# Wait until child processes exit
-wait $!
+exec java $JVM_XX_OPTS $JVM_OPTS $D_OPTS -jar /server.jar $@

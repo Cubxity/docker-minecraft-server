@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -A runtimes
-runtimes[adopt8]="adoptopenjdk/openjdk8:alpine-jre"
-runtimes[adopt11]="adoptopenjdk/openjdk11:alpine-jre"
-runtimes[adopt15]="adoptopenjdk/openjdk15:alpine-jre"
+runtimes[adopt8]="adoptopenjdk/openjdk8:jre8u275-b01-alpine"
+runtimes[adopt11]="adoptopenjdk/openjdk11:jre-11.0.9.1_1-alpine"
+runtimes[adopt15]="adoptopenjdk/openjdk15:jre-15.0.1_9-alpine"
 
 curl -s https://ci.codemc.io/job/YatopiaMC/job/Yatopia/api/json | jq -r ".jobs[].name" | while read -r job; do
   read -r kind version < <(echo "$job" | sed "s/%2F/ /")

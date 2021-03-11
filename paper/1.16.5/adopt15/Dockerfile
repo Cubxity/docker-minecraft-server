@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk15:alpine-jre
+FROM adoptopenjdk/openjdk15:jre-15.0.1_9-alpine
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
@@ -11,8 +11,8 @@ RUN addgroup -g 1000 minecraft \
   && chown minecraft:minecraft /data
 
 ENV PAPER_VERSION 1.16.5
-ENV PAPER_BUILD 472
-ENV PAPER_SHA256 07af17d2c9f18b42564d4eba0dd18b674015dca8e1a44d709ba92dca5b9b3eb0
+ENV PAPER_BUILD 545
+ENV PAPER_SHA256 b6aa167160417ddd6f527ae1c1e8e1bc622c39336be4fff4466d336ed61aa009
 
 RUN apk add --no-cache -U curl \
   && curl -o /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \

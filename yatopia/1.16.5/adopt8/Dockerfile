@@ -11,7 +11,7 @@ RUN addgroup -g 1000 minecraft \
   && chown minecraft:minecraft /data
 
 ENV YATOPIA_VERSION 1.16.5
-ENV YATOPIA_BUILD 36
+ENV YATOPIA_BUILD 40
 
 RUN apk add --no-cache -U curl \
   && curl -o /server.jar "https://ci.codemc.io/job/YatopiaMC/job/Yatopia/job/ver%2F$YATOPIA_VERSION/$YATOPIA_BUILD/artifact/target/yatopia-$YATOPIA_VERSION-yatoclip-b$YATOPIA_BUILD.jar"

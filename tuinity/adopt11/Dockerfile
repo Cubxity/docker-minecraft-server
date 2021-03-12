@@ -10,7 +10,7 @@ RUN addgroup -g 1000 minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data
 
-ENV TUINITY_BUILD 198
+ENV TUINITY_BUILD 199
 
 RUN apk add --no-cache -U curl \
   && curl -o /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"

@@ -1,9 +1,9 @@
-FROM adoptopenjdk/openjdk15:jre-15.0.1_9-alpine
+FROM adoptopenjdk/openjdk15:jre-15.0.2_7-alpine
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="1.16.1-paper-adopt15"
+LABEL org.opencontainers.image.version="paper-1.16.1-adopt15"
 
 RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \

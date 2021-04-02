@@ -1,9 +1,9 @@
-FROM adoptopenjdk/openjdk11:jre-11.0.9.1_1-alpine
+FROM adoptopenjdk/openjdk11:jre-11.0.10_9-alpine
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="1.16.2-yatopia-adopt11"
+LABEL org.opencontainers.image.version="yatopia-1.16.2-adopt11"
 
 RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \

@@ -9,6 +9,10 @@
   ./update.sh
 )
 (
+  cd ./purpur || exit
+  ./update.sh
+)
+(
   cd ./paper || exit
   ./update.sh
 )

@@ -11,7 +11,7 @@ RUN addgroup -g 1000 minecraft \
   && chown minecraft:minecraft /data
 
 ENV PURPUR_VERSION 1.16.1
-ENV PURPUR_BUILD 1076
+ENV PURPUR_BUILD 1078
 
 RUN apk add --no-cache -U curl \
   && curl -o /server.jar "https://purpur.pl3x.net/api/v1/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"

@@ -16,7 +16,6 @@ ENV PURPUR_BUILD 1098
 RUN apk add --no-cache -U curl \
   && curl -o /server.jar "https://purpur.pl3x.net/api/v1/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"
 
-VOLUME ["/data"]
 WORKDIR /data
 
 ENV MEMORY="1G"

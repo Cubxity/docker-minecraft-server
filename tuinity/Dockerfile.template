@@ -12,8 +12,7 @@ RUN addgroup -g 1000 minecraft \
 
 ENV TUINITY_BUILD {TUINITY_BUILD}
 
-RUN apk add --no-cache -U curl \
-  && curl -o /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
+RUN wget -O /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
 
 WORKDIR /data
 

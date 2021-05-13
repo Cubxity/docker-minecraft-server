@@ -13,8 +13,7 @@ RUN addgroup -g 1000 minecraft \
 ENV YATOPIA_VERSION 1.16.2
 ENV YATOPIA_BUILD 17
 
-RUN apk add --no-cache -U curl \
-  && curl -o /server.jar "https://ci.codemc.io/job/YatopiaMC/job/Yatopia/job/ver%2F$YATOPIA_VERSION/$YATOPIA_BUILD/artifact/target/yatopia-$YATOPIA_VERSION-yatoclip-b$YATOPIA_BUILD.jar"
+RUN wget -O /server.jar "https://ci.codemc.io/job/YatopiaMC/job/Yatopia/job/ver%2F$YATOPIA_VERSION/$YATOPIA_BUILD/artifact/target/yatopia-$YATOPIA_VERSION-yatoclip-b$YATOPIA_BUILD.jar"
 
 WORKDIR /data
 

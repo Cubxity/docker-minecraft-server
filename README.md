@@ -12,7 +12,7 @@ Lightweight Docker images for Minecraft server.
 $ docker run --rm -it -e EULA=true -p 25565:25565 cubxity/minecraft-server:purpur-1.16.5-adopt15
 ```
 
-This image makes use of Aikar's flags by default. The root volume is mounted at `/data`.
+This image makes use of Aikar's flags by default. The data directory can be found at `/data`.
 
 ## Environment variables
 

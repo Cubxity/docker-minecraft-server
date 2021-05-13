@@ -6,6 +6,8 @@ Lightweight Docker images for Minecraft server.
 
 > **NOTE:** By running the following command, you accept [Minecraft's EULA](https://www.minecraft.net/en-us/eula).
 
+> **WARNING:** The following container is **ephemeral**, meaning any changes made to it will be discarded.
+
 ```shell
 $ docker run --rm -it -e EULA=true -p 25565:25565 cubxity/minecraft-server:purpur-1.16.5-adopt15
 ```

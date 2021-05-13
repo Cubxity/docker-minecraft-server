@@ -15,7 +15,6 @@ ENV TUINITY_BUILD {TUINITY_BUILD}
 RUN apk add --no-cache -U curl \
   && curl -o /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
 
-VOLUME ["/data"]
 WORKDIR /data
 
 ENV MEMORY="1G"

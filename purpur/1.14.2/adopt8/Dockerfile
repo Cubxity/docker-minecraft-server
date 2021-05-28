@@ -11,7 +11,7 @@ RUN addgroup -g 1000 minecraft \
   && chown minecraft:minecraft /data
 
 ENV PURPUR_VERSION 1.14.2
-ENV PURPUR_BUILD 1133
+ENV PURPUR_BUILD 1138
 
 RUN wget -O /server.jar "https://purpur.pl3x.net/api/v1/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"
 

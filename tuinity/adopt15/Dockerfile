@@ -10,7 +10,7 @@ RUN addgroup -g 1000 minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data
 
-ENV TUINITY_BUILD 232
+ENV TUINITY_BUILD 233
 
 RUN wget -O /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
 

@@ -11,8 +11,8 @@ RUN addgroup -g 1000 minecraft \
   && chown minecraft:minecraft /data
 
 ENV PAPER_VERSION 1.16.5
-ENV PAPER_BUILD 771
-ENV PAPER_SHA256 14816a75a5d41506bc9daf08c8c488c43106d4a4cf4e83dd7f73fdf52274b4d2
+ENV PAPER_BUILD 774
+ENV PAPER_SHA256 9e1d75313e8afee895ee2dfca41c0fe83d6bdbd0c7ece819e5af2a08ba36a074
 
 RUN wget -O /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \
   && echo "$PAPER_SHA256  /server.jar" | sha256sum -c -

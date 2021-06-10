@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -A runtimes
-runtimes[adopt8]="adoptopenjdk/openjdk8:jre8u275-b01-alpine"
-runtimes[adopt11]="adoptopenjdk/openjdk11:jre-11.0.9.1_1-alpine"
-runtimes[adopt15]="adoptopenjdk/openjdk15:jre-15.0.1_9-alpine"
+runtimes[adopt8]="adoptopenjdk/openjdk8:jre8u282-b08-alpine"
+runtimes[adopt11]="adoptopenjdk/openjdk11:jre-11.0.10_9-alpine"
+runtimes[adopt15]="adoptopenjdk/openjdk15:jre-15.0.2_7-alpine"
 
 curl -s https://papermc.io/api/v2/projects/paper/ | jq -r -c ".versions[]" | while read -r version; do
   build=$(curl -s "https://papermc.io/api/v2/projects/paper/versions/$version" | jq -r ".builds[-1]")

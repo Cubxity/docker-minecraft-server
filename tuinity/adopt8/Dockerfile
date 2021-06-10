@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk8:jre8u275-b01-alpine
+FROM adoptopenjdk/openjdk8:jre8u282-b08-alpine
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
@@ -10,12 +10,10 @@ RUN addgroup -g 1000 minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data
 
-ENV TUINITY_BUILD 196
+ENV TUINITY_BUILD 238
 
-RUN apk add --no-cache -U curl \
-  && curl -o /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
+RUN wget -O /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
 
-VOLUME ["/data"]
 WORKDIR /data
 
 ENV MEMORY="1G"

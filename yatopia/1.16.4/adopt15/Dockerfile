@@ -1,9 +1,9 @@
-FROM adoptopenjdk/openjdk15:jre-15.0.1_9-alpine
+FROM adoptopenjdk/openjdk15:jre-15.0.2_7-alpine
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="1.16.4-yatopia-adopt15"
+LABEL org.opencontainers.image.version="yatopia-1.16.4-adopt15"
 
 RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
@@ -13,10 +13,8 @@ RUN addgroup -g 1000 minecraft \
 ENV YATOPIA_VERSION 1.16.4
 ENV YATOPIA_BUILD 40
 
-RUN apk add --no-cache -U curl \
-  && curl -o /server.jar "https://ci.codemc.io/job/YatopiaMC/job/Yatopia/job/ver%2F$YATOPIA_VERSION/$YATOPIA_BUILD/artifact/target/yatopia-$YATOPIA_VERSION-yatoclip-b$YATOPIA_BUILD.jar"
+RUN wget -O /server.jar "https://ci.codemc.io/job/YatopiaMC/job/Yatopia/job/ver%2F$YATOPIA_VERSION/$YATOPIA_BUILD/artifact/target/yatopia-$YATOPIA_VERSION-yatoclip-b$YATOPIA_BUILD.jar"
 
-VOLUME ["/data"]
 WORKDIR /data
 
 ENV MEMORY="1G"

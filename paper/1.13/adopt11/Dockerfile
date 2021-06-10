@@ -1,9 +1,9 @@
-FROM adoptopenjdk/openjdk11:jre-11.0.9.1_1-alpine
+FROM adoptopenjdk/openjdk11:jre-11.0.10_9-alpine
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="1.13-paper-adopt11"
+LABEL org.opencontainers.image.version="paper-1.13-adopt11"
 
 RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
@@ -14,11 +14,9 @@ ENV PAPER_VERSION 1.13
 ENV PAPER_BUILD 173
 ENV PAPER_SHA256 00db82d214242c9345266d44ff8d11a8e857a1a02edf7cb5fcc2d1d973283129
 
-RUN apk add --no-cache -U curl \
-  && curl -o /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \
+RUN wget -O /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \
   && echo "$PAPER_SHA256  /server.jar" | sha256sum -c -
 
-VOLUME ["/data"]
 WORKDIR /data
 
 ENV MEMORY="1G"

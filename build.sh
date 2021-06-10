@@ -9,6 +9,10 @@
   ./build.sh
 )
 (
+  cd ./purpur || exit
+  ./build.sh
+)
+(
   cd ./paper || exit
   ./build.sh
 )

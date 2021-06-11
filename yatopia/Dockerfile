@@ -15,7 +15,7 @@ RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && wget -O /server.jar "https://ci.codemc.io/job/YatopiaMC/job/Yatopia/job/ver%2F$YATOPIA_VERSION/$YATOPIA_BUILD/artifact/target/yatopia-$YATOPIA_VERSION-yatoclip-b$YATOPIA_BUILD.jar"
+  && wget -O /server.jar "https://ci.codemc.io/job/YatopiaMC/job/Yatopia/job/ver%252F$YATOPIA_VERSION/$YATOPIA_BUILD/artifact/target/yatopia-$YATOPIA_VERSION-paperclip-b$YATOPIA_BUILD.jar"
 
 COPY bin/start.sh /start.sh
 

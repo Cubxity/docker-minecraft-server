@@ -7,33 +7,11 @@ on:
     - cron: "* */12 * * *"
 
 jobs:
-  update:
-    runs-on: ubuntu-latest
-    outputs:
-      updated: ${{ steps.commit-changes.outputs.changes_detected }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Update templates
-        run: ./update.sh
-
-      - name: Commit changes
-        id: commit-changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Job: update templates"
-          file_pattern: "**/Dockerfile"
-
   build:
-    needs: [ update ]
     runs-on: ubuntu-latest
-    if: ${{ needs.update.outputs.updated == 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: master
 
       - name: Login to DockerHub
         uses: docker/login-action@v1

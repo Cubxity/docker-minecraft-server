@@ -1,18 +1,5 @@
 #!/bin/sh
 
-(
-  cd ./tuinity || exit
-  ./build.sh
-)
-(
-  cd ./yatopia || exit
-  ./build.sh
-)
-(
-  cd ./purpur || exit
-  ./build.sh
-)
-(
-  cd ./paper || exit
-  ./build.sh
-)
+for flavor in paper tuinity purpur yatopia; do
+  "./$flavor/build.sh"
+done

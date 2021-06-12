@@ -13,7 +13,6 @@ for runtimeName in "${!runtimes[@]}"; do
   docker build \
     --build-arg "RUNTIME=${runtimes[$runtimeName]}" \
     --build-arg "RUNTIME_NAME=$runtimeName" \
-    --build-arg "TUINITY_VERSION=$version" \
     --build-arg "TUINITY_BUILD=$build" \
     --tag "cubxity/minecraft-server:tuinity-$build-$runtimeName" \
     --tag "cubxity/minecraft-server:tuinity-$runtimeName" \

@@ -24,9 +24,12 @@ This image makes use of Aikar's flags by default. The data directory can be foun
 
 ## Variants
 
+> **NOTE:** AdoptOpenJDK 15 variants are deprecated. Support Non-LTS versions may be dropped at any time.
+
 Images are based on adoptopenjdk's alpine images.
 
 - **Paper**: `paper-{version}-{runtime}`, `paper-{version}-{build}-{runtime}`, example: `paper-1.16.5-adopt16`, `paper-1.16.5-776-adopt16`.
 - **Tuinity**: `tuinity-{runtime}`, `tuinity-{build}-{runtime}`, example: `tuinity-adopt16`, `tuinity-239-adopt16`.
+- **Airplane**: `airplane-{runtime}`, example: `airplane-adopt16`.
 - **Purpur**: `purpur-{version}-{runtime}`, `purpur-{version}-{build}-{runtime}`, example: `purpur-1.16.5-adopt16`, `purpur-1.16.5-1169-adopt8`.
 - **Yatopia**: `yatopia-{version}-{runtime}`, `yatopia-{version}-{build}-{runtime}`, example: `yatopia-1.16.5-adopt16`, `yatopia-1.16.5-118-adopt16`. **(NOT RECOMMENDED)**

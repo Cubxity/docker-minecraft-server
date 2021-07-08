@@ -9,7 +9,7 @@ ARG TUINITY_BUILD
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="tuinity-${TUINITY_BUILD}-${RUNTIME_NAME}"
+LABEL org.opencontainers.image.version="tuinity-${TUINITY_VERSION}-${TUINITY_BUILD}-${RUNTIME_NAME}"
 
 RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \

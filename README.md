@@ -30,5 +30,5 @@ Images are based on adoptopenjdk's alpine images.
 
 - **Paper**: `paper-{version}-{runtime}`, `paper-{version}-{build}-{runtime}`, example: `paper-1.16.5-adopt16`, `paper-1.16.5-776-adopt16`.
 - **Tuinity**: `tuinity-{runtime}`, `tuinity-{build}-{runtime}`, example: `tuinity-adopt16`, `tuinity-239-adopt16`.
-- **Airplane**: `airplane-{runtime}`, example: `airplane-adopt16`.
+- **Airplane**: `airplane-{version}-{runtime}`, `airplane-{version}-{build}-{runtime}` example: `airplane-1.17.1-adopt16`, `airplane-1.17.1-44-adopt16`.
 - **Purpur**: `purpur-{version}-{runtime}`, `purpur-{version}-{build}-{runtime}`, example: `purpur-1.16.5-adopt16`, `purpur-1.16.5-1169-adopt8`.

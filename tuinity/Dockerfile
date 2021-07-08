@@ -3,6 +3,7 @@ ARG RUNTIME_NAME
 
 FROM $RUNTIME
 
+ARG TUINITY_VERSION
 ARG TUINITY_BUILD
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
@@ -14,7 +15,7 @@ RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && wget -O /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
+  && wget -O /server.jar "https://ci.codemc.io/job/Spottedleaf/job/Tuinity-$TUINITY_VERSION/$TUINITY_BUILD/artifact/tuinity-paperclip.jar"
 
 COPY bin/start.sh /start.sh
 

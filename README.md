@@ -32,4 +32,3 @@ Images are based on adoptopenjdk's alpine images.
 - **Tuinity**: `tuinity-{runtime}`, `tuinity-{build}-{runtime}`, example: `tuinity-adopt16`, `tuinity-239-adopt16`.
 - **Airplane**: `airplane-{runtime}`, example: `airplane-adopt16`.
 - **Purpur**: `purpur-{version}-{runtime}`, `purpur-{version}-{build}-{runtime}`, example: `purpur-1.16.5-adopt16`, `purpur-1.16.5-1169-adopt8`.
-- **Yatopia**: `yatopia-{version}-{runtime}`, `yatopia-{version}-{build}-{runtime}`, example: `yatopia-1.16.5-adopt16`, `yatopia-1.16.5-118-adopt16`. **(NOT RECOMMENDED)**

@@ -26,9 +26,22 @@ This image makes use of Aikar's flags by default. The data directory can be foun
 
 > **NOTE:** AdoptOpenJDK 15 variants are deprecated. Support Non-LTS versions may be dropped at any time.
 
-Images are based on adoptopenjdk's alpine images.
+Images are based on AdoptOpenJDK's alpine images.
 
-- **Paper**: `paper-{version}-{runtime}`, `paper-{version}-{build}-{runtime}`, example: `paper-1.16.5-adopt16`, `paper-1.16.5-776-adopt16`.
-- **Tuinity**: `tuinity-{runtime}`, `tuinity-{build}-{runtime}`, example: `tuinity-adopt16`, `tuinity-239-adopt16`.
-- **Airplane**: `airplane-{version}-{runtime}`, `airplane-{version}-{build}-{runtime}` example: `airplane-1.17.1-adopt16`, `airplane-1.17.1-44-adopt16`.
-- **Purpur**: `purpur-{version}-{runtime}`, `purpur-{version}-{build}-{runtime}`, example: `purpur-1.16.5-adopt16`, `purpur-1.16.5-1169-adopt8`.
+**Paper**: 
+- `paper-{version}-{runtime}` (eg. `paper-1.17.1-adopt16`)
+- `paper-{version}-{build}-{runtime}` (eg. `paper-1.17.1-90-adopt16`)
+
+**Tuinity**:
+- `tuinity-{version}-{runtime}` (eg. `tuinity-1.17.adopt16`)
+- `tuinity-{version}-{build}-{runtime}` (eg. `tuinity-1.17-17-adopt16`)
+> **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
+
+**Airplane**:
+- `airplane-{version}-{runtime}` (eg. `airplane-1.17.1-adopt16`)
+- `airplane-{version}-{build}-{runtime}` (eg. `airplane-1.17.1-44-adopt16`)
+> **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
+
+**Purpur**:
+- `purpur-{version}-{runtime}` (eg. `purpur-1.17.1-adopt16`)
+- `purpur-{version}-{build}-{runtime}` (eg. `purpur-1.17.1-1260-adopt16`)

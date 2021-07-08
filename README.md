@@ -38,8 +38,13 @@ Images are based on AdoptOpenJDK's alpine images.
 > **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
 
 **Airplane**:
-- `airplane-{version}-{runtime}` (eg. `airplane-1.17.1-adopt16`)
-- `airplane-{version}-{build}-{runtime}` (eg. `airplane-1.17.1-44-adopt16`)
+- `airplane-{version}-{runtime}` (eg. `airplane-1.17-adopt16`)
+- `airplane-{version}-{build}-{runtime}` (eg. `airplane-1.17-44-adopt16`)
+> **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
+
+**Airplane-Purpur**:
+- `airplanepurpur-{version}-{runtime}` (eg. `airplanepurpur-1.17-adopt16`)
+- `airplanepurpur-{version}-{build}-{runtime}` (eg. `airplanepurpur-1.17-16-adopt16`)
 > **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
 
 **Purpur**:

@@ -4,8 +4,8 @@ runtimes[adopt8]="adoptopenjdk/openjdk8:jre8u292-b10-alpine"
 runtimes[adopt11]="adoptopenjdk/openjdk11:jre-11.0.10_9-alpine"
 runtimes[adopt16]="adoptopenjdk/openjdk16:jre-16.0.1_9-alpine"
 
-curl -s "https://purpur.pl3x.net/api/v1/purpur" | jq -r ".versions[]" | while read -r version; do
-  build=$(curl -s "https://purpur.pl3x.net/api/v1/purpur/$version" | jq -r ".builds.latest")
+curl -s "https://api.pl3x.net/v2/purpur/" | jq -r ".versions[]" | while read -r version; do
+  build=$(curl -s "https://api.pl3x.net/v2/purpur/$version/" | jq -r ".builds.latest")
 
   IFS="." read -r major minor patch <<<"${version//-*/}"
 

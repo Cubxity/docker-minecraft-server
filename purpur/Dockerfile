@@ -15,7 +15,7 @@ RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && wget -O /server.jar "https://purpur.pl3x.net/api/v1/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"
+  && wget -O /server.jar "https://api.pl3x.net/v2/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"
 
 COPY bin/start.sh /start.sh
 

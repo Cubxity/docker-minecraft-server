@@ -19,6 +19,12 @@ isTrue() {
   return ${result}
 }
 
+# Copy content from /run/data/ to /data/.
+# This is useful for mounting read-only filesystem such as ConfigMaps in Kubernetes.
+if [ -d /run/data ]; then
+   cp -rf /run/data/ /
+fi
+
 # Environment variables
 INIT_MEMORY=${INIT_MEMORY:=${MEMORY}}
 MAX_MEMORY=${MAX_MEMORY:=${MEMORY}}

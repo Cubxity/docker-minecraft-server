@@ -26,16 +26,13 @@ This image makes use of Aikar's flags by default. The data directory can be foun
 
 > **NOTE:** AdoptOpenJDK 15 variants are deprecated. Support Non-LTS versions may be dropped at any time.
 
+> **NOTE:** Tuinity has been merged into Paper. Please use the Paper image instead. 
+
 Images are based on AdoptOpenJDK's alpine images.
 
 **Paper**: 
 - `paper-{version}-{runtime}` (eg. `paper-1.17.1-adopt16`)
 - `paper-{version}-{build}-{runtime}` (eg. `paper-1.17.1-90-adopt16`)
-
-**Tuinity**:
-- `tuinity-{version}-{runtime}` (eg. `tuinity-1.17.adopt16`)
-- `tuinity-{version}-{build}-{runtime}` (eg. `tuinity-1.17-17-adopt16`)
-> **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
 
 **Airplane**:
 - `airplane-{version}-{runtime}` (eg. `airplane-1.17-adopt16`)

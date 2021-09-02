@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for flavor in paper tuinity airplane airplanepurpur purpur; do
+for flavor in paper airplane airplanepurpur purpur; do
   "./$flavor/build.sh"
 done
 

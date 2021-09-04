@@ -12,11 +12,11 @@ LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.version="paper-${PAPER_VERSION}-${PAPER_BUILD}-${RUNTIME_NAME}"
 
-RUN addgroup -g 1000 minecraft \
-  && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
+RUN groupadd -g 1000 minecraft \
+  && useradd -r -s /bin/false -u 1000 -g 1000 -m minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && wget -O /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \
+  && curl -sfL -o /server.jar "https://papermc.io/api/v2/projects/paper/versions/$PAPER_VERSION/builds/$PAPER_BUILD/downloads/paper-$PAPER_VERSION-$PAPER_BUILD.jar" \
   && echo "$PAPER_SHA256  /server.jar" | sha256sum -c -
 
 COPY bin/start.sh /start.sh

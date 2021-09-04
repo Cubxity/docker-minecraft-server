@@ -3,19 +3,19 @@ ARG RUNTIME_NAME
 
 FROM $RUNTIME
 
-ARG AIRPLANE_VERSION
-ARG AIRPLANE_BUILD
+ARG AIRPLANEPURPUR_VERSION
+ARG AIRPLANEPURPUR_BUILD
 
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="airplane-${AIRPLANE_VERSION}-${AIRPLANE_BUILD}-${RUNTIME_NAME}"
+LABEL org.opencontainers.image.version="airplanepurpur-${AIRPLANEPURPUR_VERSION}-${AIRPLANEPURPUR_BUILD}-${RUNTIME_NAME}"
 
-RUN addgroup -g 1000 minecraft \
-  && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
+RUN groupadd -g 1000 minecraft \
+  && useradd -r -s /bin/false -u 1000 -g 1000 -m minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && wget -O /server.jar "https://ci.tivy.ca/job/Airplane-$AIRPLANE_VERSION/$AIRPLANE_BUILD/artifact/launcher-airplane.jar"
+  && curl -sfL -o /server.jar "https://ci.tivy.ca/job/Airplane-Purpur-$AIRPLANEPURPUR_VERSION/$AIRPLANEPURPUR_BUILD/artifact/launcher-airplanepurpur.jar"
 
 COPY bin/start.sh /start.sh
 

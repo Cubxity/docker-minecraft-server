@@ -11,11 +11,11 @@ LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.version="purpur-${PURPUR_VERSION}-${PURPUR_BUILD}-${RUNTIME_NAME}"
 
-RUN addgroup -g 1000 minecraft \
-  && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
+RUN groupadd -g 1000 minecraft \
+  && useradd -r -s /bin/false -u 1000 -g 1000 -m minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && wget -O /server.jar "https://api.pl3x.net/v2/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"
+  && curl -sfL -o /server.jar "https://api.pl3x.net/v2/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"
 
 COPY bin/start.sh /start.sh
 

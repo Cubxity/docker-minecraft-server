@@ -15,7 +15,7 @@ RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && wget -O /server.jar "https://ci.tivy.ca/job/Airplane-Purpur-$AIRPLANEPURPUR_VERSION/$AIRPLANEPURPUR_BUILD/artifact/launcher-airplanepurpur.jar"
+  && wget -q -O /server.jar "https://ci.tivy.ca/job/Airplane-Purpur-$AIRPLANEPURPUR_VERSION/$AIRPLANEPURPUR_BUILD/artifact/launcher-airplanepurpur.jar"
 
 COPY bin/start.sh /start.sh
 

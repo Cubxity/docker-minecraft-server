@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    name: ${{ matrix.runtime.name }}
+    name: paper-${{ matrix.runtime.name }}
     runs-on: ubuntu-latest
     strategy:
       matrix:

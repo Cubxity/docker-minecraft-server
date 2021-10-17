@@ -1,7 +1,7 @@
 #!/bin/bash
 
 curl -s https://ci.tivy.ca/api/json | jq -r ".jobs[].name" | while read -r job; do
-  IFS=- read -r name flavor version <<< "$job"
+  IFS=- read -r name flavor version <<<"$job"
 
   if [ "$name" != "Airplane" ] || [[ "$flavor" != "Purpur" ]]; then
     continue
@@ -23,6 +23,7 @@ curl -s https://ci.tivy.ca/api/json | jq -r ".jobs[].name" | while read -r job; 
     --cache-to "type=registry,ref=$REPOSITORY:airplanepurpur-$version-$build-$RUNTIME_NAME,mode=max" \
     --file "airplanepurpur/$RUNTIME_OS/Dockerfile" \
     --platform "$RUNTIME_PLATFORM" \
-    --push \
     . || exit 1
 done
+
+docker push --all-tags "$REPOSITORY" || exit 1

@@ -23,6 +23,7 @@ curl -s https://ci.tivy.ca/api/json | jq -r ".jobs[].name" | while read -r job; 
     --cache-to "type=registry,ref=$REPOSITORY:airplane-$version-$build-$RUNTIME_NAME,mode=max" \
     --file "airplane/$RUNTIME_OS/Dockerfile" \
     --platform "$RUNTIME_PLATFORM" \
-    --push \
     . || exit 1
 done
+
+docker push --all-tags "$REPOSITORY" || exit 1

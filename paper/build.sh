@@ -30,6 +30,7 @@ curl -s https://papermc.io/api/v2/projects/paper/ | jq -r -c ".versions[]" | whi
     --cache-to "type=registry,ref=$REPOSITORY:paper-$version-$build-$RUNTIME_NAME,mode=max" \
     --file "paper/$RUNTIME_OS/Dockerfile" \
     --platform "$RUNTIME_PLATFORM" \
-    --push \
     . || exit 1
 done
+
+docker push --all-tags "$REPOSITORY" || exit 1

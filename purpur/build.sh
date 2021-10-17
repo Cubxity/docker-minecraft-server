@@ -28,6 +28,7 @@ curl -s "https://api.pl3x.net/v2/purpur/" | jq -r ".versions[]" | while read -r 
     --cache-to "type=registry,ref=$REPOSITORY:purpur-$version-$build-$RUNTIME_NAME,mode=max" \
     --file "purpur/$RUNTIME_OS/Dockerfile" \
     --platform "$RUNTIME_PLATFORM" \
-    --push \
     . || exit 1
 done
+
+docker push --all-tags "$REPOSITORY" || exit 1

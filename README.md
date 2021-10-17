@@ -1,3 +1,7 @@
+[![License](https://img.shields.io/github/license/Cubxity/docker-minecraft-server?style=flat-square)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/Cubxity/docker-minecraft-server?style=flat-square)](https://github.com/Cubxity/docker-minecraft-server/issues)
+[![Discord](https://img.shields.io/badge/join-discord-blue?style=flat-square)](https://discord.gg/kDDhqJmPpA)
+
 # docker-minecraft-server
 
 Lightweight Docker/container images for Paper-based Minecraft servers.
@@ -30,7 +34,8 @@ This image makes use of Aikar's flags by default. The data directory can be foun
 
 ## Image Variants
 
-This repository provides OpenJDK and Eclipse Temurin based container images for **Airplane**, **Airplane-Purpur**, **Purpur**, and
+This repository provides OpenJDK and Eclipse Temurin based container images for **Airplane**, **Airplane-Purpur**, **
+Purpur**, and
 **Paper**.
 
 > **NOTE:** AdoptOpenJDK (`adopt*`) variants are **deprecated** in favor of OpenJDK and Temurin.
@@ -44,14 +49,15 @@ This image is based on OpenJDK's Debian slim Bullseye image. The image format is
 with `-java<version>-slim-bullseye`.
 
 **Examples:**
+
 - `airplane-1.17-java17-slim-bullseye`
 - `airplane-1.17-95-java17-slim-bullseye`
 
 ### Eclipse Temurin Alpine (`temurin-alpine`)
 
-This image is based on Eclipse Temurin's Alpine image. The image format is suffixed
-with `-temurin<version>-alpine`.
+This image is based on Eclipse Temurin's Alpine image. The image format is suffixed with `-temurin<version>-alpine`.
 
 **Examples:**
+
 - `airplane-1.17-temurin17-alpine`
 - `airplane-1.17-95-temurin17-alpine`

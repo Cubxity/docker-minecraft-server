@@ -29,14 +29,15 @@ This image makes use of Aikar's flags by default. The data directory can be foun
 - `MEMORY` defaults to `1G`
 - `INIT_MEMORY` Initial memory to allocate to the JVM. Defaults to `MEMORY`
 - `MAX_MEMORY` Maximum memory to allocate to the JVM. Defaults to `MEMORY`
+- `JVM_XX_OPTS` -XX JVM argument overrides
+- `JVM_OPTS` JVM arguments to append
 - `EULA` Signifies that you accept [Minecraft's EULA](https://www.minecraft.net/en-us/eula). Accept by setting this
   variable to`true`.
 
 ## Image Variants
 
-This repository provides OpenJDK and Eclipse Temurin based container images for **Airplane**, **Airplane-Purpur**, **
-Purpur**, and
-**Paper**.
+This repository provides OpenJDK and Eclipse Temurin based container images for **Airplane**, **Airplane-Purpur**,
+**Purpur**, and **Paper**.
 
 > **NOTE:** AdoptOpenJDK (`adopt*`) variants are **deprecated** in favor of OpenJDK and Temurin.
 > Support for non-LTS versions may be dropped at any time.
@@ -44,6 +45,8 @@ Purpur**, and
 > **NOTE:** Tuinity has been merged into Paper. Please use the Paper image instead.
 
 ### OpenJDK (`java*-slim-bullseye`)
+
+Supports `linux/amd64` and `linux/arm64`.
 
 This image is based on OpenJDK's Debian slim Bullseye image. The image format is suffixed
 with `-java<version>-slim-bullseye`.
@@ -54,6 +57,8 @@ with `-java<version>-slim-bullseye`.
 - `airplane-1.17-95-java17-slim-bullseye`
 
 ### Eclipse Temurin Alpine (`temurin-alpine`)
+
+Supports `linux/amd64`.
 
 This image is based on Eclipse Temurin's Alpine image. The image format is suffixed with `-temurin<version>-alpine`.
 

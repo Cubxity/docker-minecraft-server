@@ -15,6 +15,7 @@ RUN groupadd -g 1000 minecraft \
   && useradd -r -s /bin/false -u 1000 -g 1000 -m minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
+  && RUN apt-get update && apt-get install -y curl \
   && curl -sfL -o /server.jar "https://ci.tivy.ca/job/Airplane-$AIRPLANE_VERSION/$AIRPLANE_BUILD/artifact/launcher-airplane.jar"
 
 COPY bin/start.sh /start.sh

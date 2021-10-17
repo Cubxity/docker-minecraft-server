@@ -1,0 +1,54 @@
+name: Build Airplane
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - airplane
+      - bin
+  schedule:
+    - cron: "0 */12 * * *"
+
+jobs:
+  build:
+    name: ${{ matrix.runtime.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        runtime:
+          - image: openjdk:17-slim-bullseye
+            name: java17-slim-bullseye
+            version: 17
+            platform: linux/amd64,linux/arm64/v8
+            os: debian
+          - image: eclipse-temurin:17-alpine
+            name: temurin17-alpine
+            version: 17
+            platform: linux/amd64
+            os: alpine
+
+      fail-fast: false
+
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to ghcr.io
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        run: ./airplane/build.sh
+        env:
+          RUNTIME_IMAGE: ${{ matrix.runtime.image }}
+          RUNTIME_NAME: ${{ matrix.runtime.name }}
+          RUNTIME_VERSION: ${{ matrix.runtime.version }}
+          RUNTIME_PLATFORM: ${{ matrix.runtime.platform }}
+          RUNTIME_OS: ${{ matrix.runtime.os }}
+          REPOSITORY: ghcr.io/${{ github.repository_owner }}/minecraft-server

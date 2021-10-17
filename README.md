@@ -1,6 +1,6 @@
 # docker-minecraft-server
 
-Lightweight Docker images for Minecraft server.
+Lightweight Docker/container images for Paper-based Minecraft servers.
 
 ## Running
 
@@ -9,12 +9,18 @@ Lightweight Docker images for Minecraft server.
 > **WARNING:** The following container is **ephemeral**, meaning any changes made to it will be discarded.
 
 ```shell
-$ docker run --rm -it -e EULA=true -p 25565:25565 cubxity/minecraft-server:purpur-1.16.5-adopt16
+$ docker run --rm -it -e EULA=true -p 25565:25565 ghcr.io/cubxity/minecraft-server:airplane-1.17-java17-slim-bullseye
 ```
+
+- `--rm` removes the container on exit
+- `-i` keeps STDIN open
+- `-t` allocates a pseudo-TTY
+- `-e` sets environment variable(s)
+- `-p` publish port(s) to the host
 
 This image makes use of Aikar's flags by default. The data directory can be found at `/data`.
 
-## Environment variables
+## Environment Variables
 
 - `MEMORY` defaults to `1G`
 - `INIT_MEMORY` Initial memory to allocate to the JVM. Defaults to `MEMORY`
@@ -22,28 +28,30 @@ This image makes use of Aikar's flags by default. The data directory can be foun
 - `EULA` Signifies that you accept [Minecraft's EULA](https://www.minecraft.net/en-us/eula). Accept by setting this
   variable to`true`.
 
-## Variants
+## Image Variants
 
-> **NOTE:** AdoptOpenJDK 15 variants are deprecated. Support Non-LTS versions may be dropped at any time.
+This repository provides OpenJDK and Eclipse Temurin based container images for **Airplane**, **Airplane-Purpur**, **Purpur**, and
+**Paper**.
 
-> **NOTE:** Tuinity has been merged into Paper. Please use the Paper image instead. 
+> **NOTE:** AdoptOpenJDK (`adopt*`) variants are **deprecated** in favor of OpenJDK and Temurin.
+> Support for non-LTS versions may be dropped at any time.
 
-Images are based on AdoptOpenJDK's alpine images.
+> **NOTE:** Tuinity has been merged into Paper. Please use the Paper image instead.
 
-**Paper**: 
-- `paper-{version}-{runtime}` (eg. `paper-1.17.1-adopt16`)
-- `paper-{version}-{build}-{runtime}` (eg. `paper-1.17.1-90-adopt16`)
+### OpenJDK (`java*-slim-bullseye`)
 
-**Airplane**:
-- `airplane-{version}-{runtime}` (eg. `airplane-1.17-adopt16`)
-- `airplane-{version}-{build}-{runtime}` (eg. `airplane-1.17-44-adopt16`)
-> **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
+This image is based on OpenJDK's Debian slim Bullseye image. The image format is suffixed
+with `-java<version>-slim-bullseye`.
 
-**Airplane-Purpur**:
-- `airplanepurpur-{version}-{runtime}` (eg. `airplanepurpur-1.17-adopt16`)
-- `airplanepurpur-{version}-{build}-{runtime}` (eg. `airplanepurpur-1.17-16-adopt16`)
-> **NOTE: `version` may not represent the actual Minecraft version. It's the version represented on the CI.**
+**Examples:**
+- `airplane-1.17-java17-slim-bullseye`
+- `airplane-1.17-95-java17-slim-bullseye`
 
-**Purpur**:
-- `purpur-{version}-{runtime}` (eg. `purpur-1.17.1-adopt16`)
-- `purpur-{version}-{build}-{runtime}` (eg. `purpur-1.17.1-1260-adopt16`)
+### Eclipse Temurin Alpine (`temurin-alpine`)
+
+This image is based on Eclipse Temurin's Alpine image. The image format is suffixed
+with `-temurin<version>-alpine`.
+
+**Examples:**
+- `airplane-1.17-temurin17-alpine`
+- `airplane-1.17-95-temurin17-alpine`

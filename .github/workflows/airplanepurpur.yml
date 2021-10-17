@@ -61,3 +61,4 @@ jobs:
           RUNTIME_PLATFORM: ${{ matrix.runtime.platform }}
           RUNTIME_OS: ${{ matrix.runtime.os }}
           REPOSITORY: ghcr.io/${{ steps.vars.outputs.repository_owner }}/minecraft-server
+          REPOSITORY_NAME: ${{ steps.vars.outputs.repository_owner }}/minecraft-server

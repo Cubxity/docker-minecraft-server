@@ -33,4 +33,4 @@ curl -s https://papermc.io/api/v2/projects/paper/ | jq -r -c ".versions[]" | whi
     . || exit 1
 done
 
-docker push --all-tags "$REPOSITORY" || exit 1
+docker push --all-tags "$REPOSITORY_NAME" || exit 1

@@ -31,4 +31,4 @@ curl -s "https://api.pl3x.net/v2/purpur/" | jq -r ".versions[]" | while read -r 
     . || exit 1
 done
 
-docker push --all-tags "$REPOSITORY" || exit 1
+docker push --all-tags "$REPOSITORY_NAME" || exit 1

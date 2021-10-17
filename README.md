@@ -56,7 +56,7 @@ with `-java<version>-slim-bullseye`.
 - `airplane-1.17-java17-slim-bullseye`
 - `airplane-1.17-95-java17-slim-bullseye`
 
-### Eclipse Temurin Alpine (`temurin-alpine`)
+### Eclipse Temurin Alpine (`temurin*-alpine`)
 
 Supports `linux/amd64`.
 

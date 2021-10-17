@@ -29,5 +29,5 @@ curl -s "https://api.pl3x.net/v2/purpur/" | jq -r ".versions[]" | while read -r 
     --file "purpur/$RUNTIME_OS/Dockerfile" \
     --platform "$RUNTIME_PLATFORM" \
     --push \
-    .
+    . || exit 1
 done

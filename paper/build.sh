@@ -31,5 +31,5 @@ curl -s https://papermc.io/api/v2/projects/paper/ | jq -r -c ".versions[]" | whi
     --file "paper/$RUNTIME_OS/Dockerfile" \
     --platform "$RUNTIME_PLATFORM" \
     --push \
-    .
+    . || exit 1
 done

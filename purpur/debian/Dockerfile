@@ -15,7 +15,7 @@ RUN groupadd -g 1000 minecraft \
   && useradd -r -s /bin/false -u 1000 -g 1000 -m minecraft \
   && mkdir -m 775 /data \
   && chown minecraft:minecraft /data \
-  && RUN apt-get update && apt-get install -y curl \
+  && apt-get update && apt-get install -y curl \
   && curl -sfL -o /server.jar "https://api.pl3x.net/v2/purpur/$PURPUR_VERSION/$PURPUR_BUILD/download"
 
 COPY bin/start.sh /start.sh

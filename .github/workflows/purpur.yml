@@ -37,16 +37,6 @@ jobs:
             version: 17
             platform: linux/amd64
             os: alpine
-          - image: eclipse-temurin:11-alpine
-            name: temurin11-alpine
-            version: 11
-            platform: linux/amd64
-            os: alpine
-          - image: eclipse-temurin:8-alpine
-            name: temurin8-alpine
-            version: 8
-            platform: linux/amd64
-            os: alpine
 
       fail-fast: false
 

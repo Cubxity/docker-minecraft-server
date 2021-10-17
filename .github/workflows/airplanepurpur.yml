@@ -4,8 +4,9 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - airplanepurpur
-      - bin
+      - airplanepurpur/**
+      - bin/**
+      - .github/workflows/airplanepurpur.yml
   schedule:
     - cron: "0 */12 * * *"
 

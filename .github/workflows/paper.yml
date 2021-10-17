@@ -4,8 +4,9 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - paper
-      - bin
+      - paper/**
+      - bin/**
+      - .github/workflows/paper.yml
   schedule:
     - cron: "0 */12 * * *"
 

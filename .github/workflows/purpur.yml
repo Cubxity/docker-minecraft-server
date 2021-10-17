@@ -4,8 +4,9 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - purpur
-      - bin
+      - purpur/**
+      - bin/**
+      - .github/workflows/purpur.yml
   schedule:
     - cron: "0 */12 * * *"
 

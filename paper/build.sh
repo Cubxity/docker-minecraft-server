@@ -20,7 +20,6 @@ curl -s https://papermc.io/api/v2/projects/paper/ | jq -r -c ".versions[]" | whi
 
   docker buildx build \
     --build-arg "RUNTIME=$RUNTIME_IMAGE" \
-    --build-arg "RUNTIME_NAME=$RUNTIME_NAME" \
     --build-arg "PAPER_VERSION=$version" \
     --build-arg "PAPER_BUILD=$build" \
     --build-arg "PAPER_SHA256=$hash" \

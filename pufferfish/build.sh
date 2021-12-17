@@ -15,7 +15,6 @@ curl -s https://ci.pufferfish.host/api/json | jq -r ".jobs[].name" | while read 
 
   docker buildx build \
     --build-arg "RUNTIME=$RUNTIME_IMAGE" \
-    --build-arg "RUNTIME_NAME=$RUNTIME_NAME" \
     --build-arg "PUFFERFISH_VERSION=$version" \
     --build-arg "PUFFERFISH_BUILD=$build" \
     --build-arg "PUFFERFISH_PATH=$path" \

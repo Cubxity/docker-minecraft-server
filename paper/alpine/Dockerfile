@@ -1,5 +1,4 @@
 ARG RUNTIME
-ARG RUNTIME_NAME
 
 FROM $RUNTIME
 
@@ -10,7 +9,7 @@ ARG PAPER_SHA256
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="paper-${PAPER_VERSION}-${PAPER_BUILD}-${RUNTIME_NAME}"
+LABEL org.opencontainers.image.version="paper-${PAPER_VERSION}-${PAPER_BUILD}"
 
 RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \

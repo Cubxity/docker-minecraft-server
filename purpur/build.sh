@@ -19,7 +19,6 @@ curl -s "https://api.pl3x.net/v2/purpur/" | jq -r ".versions[]" | while read -r 
 
   docker buildx build \
     --build-arg "RUNTIME=$RUNTIME_IMAGE" \
-    --build-arg "RUNTIME_NAME=$RUNTIME_NAME" \
     --build-arg "PURPUR_VERSION=$version" \
     --build-arg "PURPUR_BUILD=$build" \
     --tag "$REPOSITORY:purpur-$version-$build-$RUNTIME_NAME" \

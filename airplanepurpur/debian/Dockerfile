@@ -1,5 +1,4 @@
 ARG RUNTIME
-ARG RUNTIME_NAME
 
 FROM $RUNTIME
 
@@ -9,7 +8,7 @@ ARG AIRPLANEPURPUR_BUILD
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="airplanepurpur-${AIRPLANEPURPUR_VERSION}-${AIRPLANEPURPUR_BUILD}-${RUNTIME_NAME}"
+LABEL org.opencontainers.image.version="airplanepurpur-${AIRPLANEPURPUR_VERSION}-${AIRPLANEPURPUR_BUILD}"
 
 RUN groupadd -g 1000 minecraft \
   && useradd -r -s /bin/false -u 1000 -g 1000 -m minecraft \

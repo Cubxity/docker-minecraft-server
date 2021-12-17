@@ -14,7 +14,6 @@ curl -s https://ci.tivy.ca/api/json | jq -r ".jobs[].name" | while read -r job; 
 
   docker buildx build \
     --build-arg "RUNTIME=$RUNTIME_IMAGE" \
-    --build-arg "RUNTIME_NAME=$RUNTIME_NAME" \
     --build-arg "AIRPLANEPURPUR_VERSION=$version" \
     --build-arg "AIRPLANEPURPUR_BUILD=$build" \
     --tag "$REPOSITORY:airplanepurpur-$version-$build-$RUNTIME_NAME" \

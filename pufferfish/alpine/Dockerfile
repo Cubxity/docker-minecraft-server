@@ -10,7 +10,7 @@ ARG PUFFERFISH_PATH
 LABEL org.opencontainers.image.documentation="https://github.com/Cubxity/docker-minecraft-server"
 LABEL org.opencontainers.image.authors="Cubxity <cubxity@protonmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/Cubxity/docker-minecraft-server"
-LABEL org.opencontainers.image.version="pufferfish-${PUFFERFISH_VERSION}-${PUFFERFISH_BUILD}-${RUNTIME_NAME}"
+LABEL org.opencontainers.image.version="pufferfish-${PUFFERFISH_VERSION}-${PUFFERFISH_BUILD}"
 
 RUN addgroup -g 1000 minecraft \
   && adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft \

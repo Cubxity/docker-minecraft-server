@@ -13,14 +13,20 @@ Lightweight Docker/container images for Paper-based Minecraft servers.
 > **WARNING:** The following container is **ephemeral**, meaning any changes made to it will be discarded.
 
 ```shell
-$ docker run --rm -it -e EULA=true -p 25565:25565 ghcr.io/cubxity/minecraft-server:airplane-1.17-java17-slim-bullseye
+$ docker run --rm -it \
+  -e EULA=true \
+  -e JVM_OPTS_EXTRA=--add-modules=jdk.incubator.vector \
+  -p 25565:25565 \
+  ghcr.io/cubxity/minecraft-server:pufferfish-1.19-java17-slim-bullseye
 ```
+
+> **Note:** `JVM_OPTS_EXTRA=--add-modules=jdk.incubator.vector` is only required for Pufferfish.
 
 - `--rm` removes the container on exit
 - `-i` keeps STDIN open
 - `-t` allocates a pseudo-TTY
-- `-e` sets environment variable(s)
-- `-p` publish port(s) to the host
+- `-e EULA=true` sets the `EULA` environment variable to true, signifying EULA agreement
+- `-p 25565:25565` publish container port 25565 to the host on 0.0.0.0:25565
 
 This image makes use of Aikar's flags by default. The data directory can be found at `/data`.
 
@@ -30,19 +36,27 @@ This image makes use of Aikar's flags by default. The data directory can be foun
 - `INIT_MEMORY` Initial memory to allocate to the JVM. Defaults to `MEMORY`
 - `MAX_MEMORY` Maximum memory to allocate to the JVM. Defaults to `MEMORY`
 - `JVM_XX_OPTS` -XX JVM argument overrides
-- `JVM_OPTS` JVM arguments to append
+- `JVM_OPTS` JVM arguments (mainly memory) overrides
+- `D_OPTS` JVM properties overrides
+- `JVM_XX_OPTS_EXTRA` -XX JVM argument to append
+- `JVM_OPTS_EXTRA` JVM arguments to append
+- `D_OPTS_EXTRA` JVM properties to append
 - `EULA` Signifies that you accept [Minecraft's EULA](https://www.minecraft.net/en-us/eula). Accept by setting this
   variable to`true`.
 
+Implementation can be found in [start.sh](bin/start.sh).
+
+> **Tips:** Set environment `JVM_OPTS_EXTRA=--add-modules=jdk.incubator.vector` to enable vector module for Pufferfish.
+
 ## Image Variants
 
-This repository provides OpenJDK and Eclipse Temurin based container images for **Airplane**, **Airplane-Purpur**,
+This repository provides OpenJDK and Eclipse Temurin based container images for **Pufferfish**,
 **Purpur**, and **Paper**.
 
 > **NOTE:** AdoptOpenJDK (`adopt*`) variants are **deprecated** in favor of OpenJDK and Temurin.
 > Support for non-LTS versions may be dropped at any time.
 
-> **NOTE:** Tuinity has been merged into Paper. Please use the Paper image instead.
+> **NOTE:** Airplane is discontinued. Please use Pufferfish or Purpur instead.
 
 ### OpenJDK (`java*-slim-bullseye`)
 
@@ -53,8 +67,8 @@ with `-java<version>-slim-bullseye`.
 
 **Examples:**
 
-- `airplane-1.17-java17-slim-bullseye`
-- `airplane-1.17-95-java17-slim-bullseye`
+- `pufferfish-1.19-java17-slim-bullseye`
+- `pufferfish-1.19-34-java17-slim-bullseye`
 
 ### Eclipse Temurin Alpine (`temurin*-alpine`)
 
@@ -64,5 +78,5 @@ This image is based on Eclipse Temurin's Alpine image. The image format is suffi
 
 **Examples:**
 
-- `airplane-1.17-temurin17-alpine`
-- `airplane-1.17-95-temurin17-alpine`
+- `pufferfish-1.19-temurin17-alpine`
+- `pufferfish-1.19-34-temurin17-alpine`

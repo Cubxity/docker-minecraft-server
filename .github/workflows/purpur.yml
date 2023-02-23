@@ -17,17 +17,17 @@ jobs:
     strategy:
       matrix:
         runtime:
-          - image: openjdk:17-slim-bullseye
+          - image: azul/zulu-openjdk-debian:17-latest
             name: java17-slim-bullseye
             version: 17
             platform: linux/amd64,linux/arm64/v8
             os: debian
-          - image: openjdk:11-slim-bullseye
+          - image: azul/zulu-openjdk-debian:11-latest
             name: java11-slim-bullseye
             version: 11
             platform: linux/amd64,linux/arm64/v8
             os: debian
-          - image: openjdk:8-slim-bullseye
+          - image: azul/zulu-openjdk-debian:8-latest
             name: java8-slim-bullseye
             version: 8
             platform: linux/amd64,linux/arm64/v8

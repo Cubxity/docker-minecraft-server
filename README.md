@@ -50,19 +50,19 @@ Implementation can be found in [start.sh](bin/start.sh).
 
 ## Image Variants
 
-This repository provides OpenJDK and Eclipse Temurin based container images for **Pufferfish**,
+This repository provides Azul Zulu and Eclipse Temurin based container images for **Pufferfish**,
 **Purpur**, and **Paper**.
 
-> **NOTE:** AdoptOpenJDK (`adopt*`) variants are **deprecated** in favor of OpenJDK and Temurin.
+> **NOTE:** OpenJDK images are **deprecated** in favor of Azul Zulu and Temurin.
 > Support for non-LTS versions may be dropped at any time.
 
 > **NOTE:** Airplane is discontinued. Please use Pufferfish or Purpur instead.
 
-### OpenJDK (`java*-slim-bullseye`)
+### Azul Zulu Debian (`java*-slim-bullseye`)
 
 Supports `linux/amd64` and `linux/arm64`.
 
-This image is based on OpenJDK's Debian slim Bullseye image. The image format is suffixed
+This image is based on Azul Zulu's Debian slim Bullseye image. The image format is suffixed
 with `-java<version>-slim-bullseye`.
 
 **Examples:**

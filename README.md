@@ -17,7 +17,7 @@ $ docker run --rm -it \
   -e EULA=true \
   -e JVM_OPTS_EXTRA=--add-modules=jdk.incubator.vector \
   -p 25565:25565 \
-  ghcr.io/cubxity/minecraft-server:pufferfish-1.19-java17-slim-bullseye
+  ghcr.io/cubxity/minecraft-server:pufferfish-1.19-temurin17-jammy
 ```
 
 > **Note:** `JVM_OPTS_EXTRA=--add-modules=jdk.incubator.vector` is only required for Pufferfish.
@@ -50,25 +50,13 @@ Implementation can be found in [start.sh](bin/start.sh).
 
 ## Image Variants
 
-This repository provides OpenJDK and Eclipse Temurin based container images for **Pufferfish**,
+This repository provides Eclipse Temurin based container images for **Pufferfish**,
 **Purpur**, and **Paper**.
 
-> **NOTE:** AdoptOpenJDK (`adopt*`) variants are **deprecated** in favor of OpenJDK and Temurin.
+> ⚠️ AdoptOpenJDK (`adopt*`) and OpenJDK (`java*`) variants are **deprecated** in favor of Eclipse Temurin.
 > Support for non-LTS versions may be dropped at any time.
 
-> **NOTE:** Airplane is discontinued. Please use Pufferfish or Purpur instead.
-
-### OpenJDK (`java*-slim-bullseye`)
-
-Supports `linux/amd64` and `linux/arm64`.
-
-This image is based on OpenJDK's Debian slim Bullseye image. The image format is suffixed
-with `-java<version>-slim-bullseye`.
-
-**Examples:**
-
-- `pufferfish-1.19-java17-slim-bullseye`
-- `pufferfish-1.19-34-java17-slim-bullseye`
+> ⚠️ Airplane is discontinued. Please use Pufferfish, Paper, or Purpur instead.
 
 ### Eclipse Temurin Alpine (`temurin*-alpine`)
 
@@ -80,3 +68,14 @@ This image is based on Eclipse Temurin's Alpine image. The image format is suffi
 
 - `pufferfish-1.19-temurin17-alpine`
 - `pufferfish-1.19-34-temurin17-alpine`
+ 
+### Eclipse Temurin Ubuntu Jammy (`temurin*-jammy`)
+
+Supports `linux/amd64` and `linux/arm64`.
+
+This image is based on Eclipse Temurin's Ubuntu Jammy Jellyfish image. The image format is suffixed with `-temurin<version>-jammy`.
+
+**Examples:**
+
+- `pufferfish-1.19-temurin17-jammy`
+- `pufferfish-1.19-34-temurin17-jammy`

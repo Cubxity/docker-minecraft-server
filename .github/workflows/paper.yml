@@ -17,18 +17,18 @@ jobs:
     strategy:
       matrix:
         runtime:
-          - image: openjdk:17-slim-bullseye
-            name: java17-slim-bullseye
+          - image: eclipse-temurin:17-jre-jammy
+            name: temurin17-jammy
             version: 17
             platform: linux/amd64,linux/arm64/v8
             os: debian
-          - image: openjdk:11-slim-bullseye
-            name: java11-slim-bullseye
+          - image: eclipse-temurin:11-jre-jammy
+            name: temurin11-jammy
             version: 11
             platform: linux/amd64,linux/arm64/v8
             os: debian
-          - image: openjdk:8-slim-bullseye
-            name: java8-slim-bullseye
+          - image: eclipse-temurin:8-jre-jammy
+            name: temurin8-jammy
             version: 8
             platform: linux/amd64,linux/arm64/v8
             os: debian
